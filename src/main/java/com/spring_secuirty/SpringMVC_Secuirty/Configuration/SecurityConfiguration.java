@@ -45,7 +45,9 @@ public class SecurityConfiguration {
                                 .loginPage("/showCustomLogin")
                                 .loginProcessingUrl("/authenticateUser")
                                 .permitAll()
-                        );
+                )
+                .logout(logout->logout.permitAll()
+                );
         return http.build();
     }
 }

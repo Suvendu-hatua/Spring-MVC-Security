@@ -13,8 +13,13 @@
            <div class="w-50 mx-auto border border-2 border-info p-4">
                <!--           Handling Custom Error Messages if there are some login issues.-->
                <div class="mb-1">
+<!--                   for displaying error-->
                    <div th:if="${param.error}" class="p-3 text-danger bg-danger-subtle border border-danger-subtle rounded-3">
                        You have entered either wrong username or password!.
+                   </div>
+<!--                   for displaying logout-->
+                   <div th:if="${param.logout}" class="p-3 text-success bg-success-subtle border border-success-subtle rounded-3">
+                       You are logged out successfully!.
                    </div>
                </div>
                <form action="#" th:action="@{/authenticateUser}" method="post">
