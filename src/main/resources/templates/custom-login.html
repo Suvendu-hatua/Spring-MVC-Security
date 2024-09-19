@@ -12,10 +12,11 @@
            <hr>
            <div class="w-50 mx-auto border border-2 border-info p-4">
                <!--           Handling Custom Error Messages if there are some login issues.-->
-               <div th:if="${param.error}" class="text-danger">
-                   You have entered either wrong username or password!.
+               <div class="mb-1">
+                   <div th:if="${param.error}" class="p-3 text-danger bg-danger-subtle border border-danger-subtle rounded-3">
+                       You have entered either wrong username or password!.
+                   </div>
                </div>
-               <br>
                <form action="#" th:action="@{/authenticateUser}" method="post">
                    <div class="mb-3">
                        <label for="username" class="form-label fw-bold">UserName</label>
