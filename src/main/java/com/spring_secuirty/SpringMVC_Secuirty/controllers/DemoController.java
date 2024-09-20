@@ -24,4 +24,9 @@ public class DemoController {
     public String showAdminInfo(){
         return "admin-meeting";
     }
+
+    @GetMapping("/access-denied")
+    public String accessDeniedPage(){
+        return "custom-error";
+    }
 }
