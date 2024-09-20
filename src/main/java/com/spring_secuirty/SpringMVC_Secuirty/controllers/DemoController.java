@@ -14,4 +14,14 @@ public class DemoController {
     public String customLoginPage(){
         return "custom-login";
     }
+
+    @GetMapping("/leaders")
+    public String showLeadersInfo(){
+        return "leader-meeting";
+    }
+
+    @GetMapping("/systems")
+    public String showAdminInfo(){
+        return "admin-meeting";
+    }
 }
