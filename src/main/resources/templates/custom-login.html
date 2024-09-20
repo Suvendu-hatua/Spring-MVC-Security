@@ -8,34 +8,38 @@
 </head>
 <body>
        <div class="container">
-           <h2 class="text-center mt-3">Custom Login Page</h2>
-           <hr>
-           <div class="w-50 mx-auto border border-2 border-info p-4">
-               <!--           Handling Custom Error Messages if there are some login issues.-->
-               <div class="mb-1">
-<!--                   for displaying error-->
-                   <div th:if="${param.error}" class="p-3 text-danger bg-danger-subtle border border-danger-subtle rounded-3">
-                       You have entered either wrong username or password!.
-                   </div>
-<!--                   for displaying logout-->
-                   <div th:if="${param.logout}" class="p-3 text-success bg-success-subtle border border-success-subtle rounded-3">
-                       You are logged out successfully!.
-                   </div>
-               </div>
-               <form action="#" th:action="@{/authenticateUser}" method="post">
-                   <div class="mb-3">
-                       <label for="username" class="form-label fw-bold">UserName</label>
-                       <input type="text" class="form-control" id="username" name="username" placeholder="Enter UserName" autocomplete="off">
-                   </div>
-                   <div class="mb-3">
-                       <label for="password" class="form-label fw-bold">Password</label>
-                       <input type="password" class="form-control" name="password" id="password" placeholder="Enter Password">
-                   </div>
 
-                  <div class="d-grid">
-                      <button type="submit" class="btn btn-primary">Submit</button>
+           <div class="card w-50 mx-auto border border-2 border-info mt-5">
+               <div class="card-header bg-info fw-bold fs-3">
+                   SignIn
+               </div>
+              <div class="p-4">
+                  <!--           Handling Custom Error Messages if there are some login issues.-->
+                  <div class="mb-1">
+                      <!--                   for displaying error-->
+                      <div th:if="${param.error}" class="p-3 text-danger bg-danger-subtle border border-danger-subtle rounded-3">
+                          You have entered either wrong username or password!.
+                      </div>
+                      <!--                   for displaying logout-->
+                      <div th:if="${param.logout}" class="p-3 text-success bg-success-subtle border border-success-subtle rounded-3">
+                          You are logged out successfully!.
+                      </div>
                   </div>
-               </form>
+                  <form action="#" th:action="@{/authenticateUser}" method="post">
+                      <div class="mb-3">
+                          <label for="username" class="form-label fw-bold">UserName</label>
+                          <input type="text" class="form-control" id="username" name="username" placeholder="Enter UserName" autocomplete="off">
+                      </div>
+                      <div class="mb-3">
+                          <label for="password" class="form-label fw-bold">Password</label>
+                          <input type="password" class="form-control" name="password" id="password" placeholder="Enter Password">
+                      </div>
+
+                      <div class="d-grid">
+                          <button type="submit" class="btn btn-primary">Submit</button>
+                      </div>
+                  </form>
+              </div>
            </div>
        </div>
 </body>

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <head>
     <meta charset="UTF-8">
     <title>Home Page</title>
@@ -11,9 +11,9 @@
            <h2>Welcome to Lov2Code Academy</h2>
            <hr>
            <div>
-               USER:<span></span>
+               USER:<span sec:authentication="principal.username"></span>
                <br>
-               ROLE(s):<span></span>
+               ROLE(s):<span sec:authentication="principal.authorities"></span>
            </div>
            <hr>
            <div>
