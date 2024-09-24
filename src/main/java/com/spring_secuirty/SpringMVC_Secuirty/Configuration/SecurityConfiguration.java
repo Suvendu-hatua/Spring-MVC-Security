@@ -19,7 +19,18 @@ public class SecurityConfiguration {
 
     @Bean
     public UserDetailsManager userDetailsManager(DataSource dataSource){
-        return new JdbcUserDetailsManager(dataSource);
+        JdbcUserDetailsManager userDetailsManager=new JdbcUserDetailsManager(dataSource);
+//        return new JdbcUserDetailsManager(dataSource);
+        //writing low level JPA code for fetching username,password and roles from database.
+
+        //fetching user details from user table
+        userDetailsManager.setUsersByUsernameQuery("select * from employee where user_name=?");
+
+        //fetching authorities details from user table
+        userDetailsManager.setAuthoritiesByUsernameQuery("select * from employee_role where user_name=?");
+
+        return userDetailsManager;
+
     }
 
 //    @Bean
